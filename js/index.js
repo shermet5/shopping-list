@@ -3,7 +3,7 @@ const input = document.querySelector('input');
 const button = document.querySelector('button');
 
 button.onclick = function () {
-    let myItem = input.value;
+    let someItem = input.value;
     input.value = '';
 
     const listItem = document.createElement('li');
@@ -11,13 +11,13 @@ button.onclick = function () {
     const listBtn = document.createElement('button');
 
     listItem.appendChild(listText);
-    listText.textContent = myItem;
+    listText.textContent = someItem;
     listItem.appendChild(listBtn);
     listBtn.textContent = 'Delete';
     list.appendChild(listItem);
 
-    listBtn.onclick = function (e) {
+    listBtn.onclick = function () {
         list.removeChild(listItem);
     }
-    
+    input.focus();    
 }
